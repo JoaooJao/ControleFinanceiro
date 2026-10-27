@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="./home.js" defer></script>
+    <title>Controle Financeiro</title>
+</head>
+
+<body>
+
+    <header class="topo">
+        <h1 id="boasVindas">Controle Financeiro</h1>
+        <div class="topo-acoes">
+            <input type="month" id="mes">
+            <button id="sair" type="button">Sair</button>
+        </div>
+    </header>
+
+    <main class="painel">
+
+        <section class="cards">
+            <div class="card">
+                <span>Receitas</span>
+                <strong id="receitas" class="verde">R$ 0,00</strong>
+            </div>
+            <div class="card">
+                <span>Despesas</span>
+                <strong id="despesas" class="vermelho">R$ 0,00</strong>
+            </div>
+            <div class="card">
+                <span>Saldo</span>
+                <strong id="saldo">R$ 0,00</strong>
+            </div>
+        </section>
+
+        <section class="grade">
+
+            <div class="card">
+                <h2 id="tituloForm">Nova transação</h2>
+                <form id="formTransacao">
+                    <div class="campo">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" id="descricao" placeholder="Ex.: Mercado" required>
+                    </div>
+                    <div class="campo">
+                        <label for="valor">Valor</label>
+                        <input type="number" id="valor" step="0.01" min="0.01" placeholder="0,00" required>
+                    </div>
+                    <div class="campo">
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo">
+                            <option value="DESPESA">Despesa</option>
+                            <option value="RECEITA">Receita</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="categoria">Categoria</label>
+                        <input type="text" id="categoria" list="categorias" placeholder="Ex.: Alimentação" required>
+                        <datalist id="categorias">
+                            <option value="Alimentação">
+                            <option value="Moradia">
+                            <option value="Transporte">
+                            <option value="Lazer">
+                            <option value="Saúde">
+                            <option value="Trabalho">
+                        </datalist>
+                    </div>
+                    <div class="campo">
+                        <label for="data">Data</label>
+                        <input type="date" id="data" required>
+                    </div>
+                    <button type="submit" id="btnSalvar">Adicionar</button>
+                    <button type="button" id="btnCancelar" class="cancelar" hidden>Cancelar edição</button>
+                </form>
+            </div>
+
+            <div class="coluna">
+                <div class="card">
+                    <h2>Despesas por categoria (% da receita)</h2>
+                    <div id="categoriasLista" class="barras"></div>
+                </div>
+
+                <div class="card">
+                    <h2>Transações do mês</h2>
+                    <ul id="lista" class="lista"></ul>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+
+</html>
