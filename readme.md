@@ -4,6 +4,8 @@ Aplicação web para controle de finanças pessoais. O usuário cria uma conta, 
 
 O projeto tem uma **API REST** em Java com Spring Boot e um **front-end** em HTML, CSS e JavaScript puro.
 
+![Tela Financeiro](docs/telafinanceiro.png)
+
 ## Funcionalidades
 
 - Cadastro de usuário com validação dos campos
